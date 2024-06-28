@@ -30,3 +30,10 @@
 
 ## userRoutes.js"
 This is where we create routers(delibery trucks) and define routes(addressess) to which a specific request (GET, POST, PATCH, DELETE) will be carried out
+
+## userController.js
+
+### logoutUser:
+Since the token is what gives the logged in user access, the logout function clears the `jwt` cookie by setting it to an empty value and an expired date `new Date(0)`
+
+## authMiddleware.js:
