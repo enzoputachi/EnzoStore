@@ -1,4 +1,4 @@
-## db.js
+# EnzoStore## db.js
     This is where we define the standard of operation (SOP) on how to connect to our database.
 
     Requirements:
