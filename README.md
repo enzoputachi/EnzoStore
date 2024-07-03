@@ -27,6 +27,7 @@
     2. compile the userChema using the mongoose.model('ModelName', schema, 'collectionName') method.
 
 ## asynHandler.js:
+    This is where the asynHandler function is created. The function wraps an async function. If an async function succeeds, it returns the result as a promise. Else, it uses the catch method to handle the error gracefully. 
 
 ## userRoutes.js"
 This is where we create routers(delibery trucks) and define routes(addressess) to which a specific request (GET, POST, PATCH, DELETE) will be carried out
@@ -37,3 +38,8 @@ This is where we create routers(delibery trucks) and define routes(addressess) t
 Since the token is what gives the logged in user access, the logout function clears the `jwt` cookie by setting it to an empty value and an expired date `new Date(0)`
 
 ## authMiddleware.js:
+This is where we verify if a exists and if the existing user has authorized access. 
+`authenticate: `  
+    We find the userid and password by decoding the token in the jwt cookie. If it matches, then the authentican is succesful and the user can continue with their activity. Else, user's access is blocked
+`authorizeAdmin: `
+    Here we check if the user is aurhenticated and if the isAmin property of the User is true. 
