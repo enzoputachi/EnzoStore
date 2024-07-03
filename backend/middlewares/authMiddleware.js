@@ -22,17 +22,8 @@ const authenticate = asyncHandler(async (req, res, next) => {
             }
             next();
         } catch(error) {
-            console.error('Token verification failed:', error.message);
-            if (error.name === 'TokenExpiredError') {
-                res.status(401);
-                throw new Error("Not authorized, token expired");
-            } else if (error.name === 'JsonWebTokenError') {
-                res.status(401);
-                throw new Error("Not authorized, invalid token");
-            } else {
-                res.status(401);
-                throw new Error("Not authorized, token failed");
-            }
+            res.status(401)
+            throw new Error ("Not authorized, token failed");
         }
     } else {
         res.status(401)
